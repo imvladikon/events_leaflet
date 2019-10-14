@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css' />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.6/turf.js'></script>
+</head>
+
+<body>
+    <div id="main">
+        <div class="row" style="zoom: 75%">
+            <div id="map" class="col" style="position: relative; overflow: hidden;"></div>
+            <div id="events" class="col">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Data</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tr id="zoomlevelschange">
+                        <td><code><b>zoomlevelschange</b>
+    		</code><a anchor="zoomlevelschange"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the number of zoomlevels on the map is changed due
+                            to adding or removing a layer.</td>
+                    </tr>
+                    <tr id="resize">
+                        <td><code><b>resize</b>
+    		</code><a anchor="resize"></a></td>
+                        <td><code><a href="#resizeevent">ResizeEvent</a></code></td>
+                        <td>Fired when the map is resized.</td>
+                    </tr>
+                    <tr id="unload">
+                        <td><code><b>unload</b>
+    		</code><a anchor="unload"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the map is destroyed with <a href="#remove">remove</a> method.</td>
+                    </tr>
+                    <tr id="viewreset">
+                        <td><code><b>viewreset</b>
+    		</code><a anchor="viewreset"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the map needs to redraw its content (this usually happens
+                            on map zoom or load). Very useful for creating custom overlays.</td>
+                    </tr>
+                    <tr id="load">
+                        <td><code><b>load</b>
+    		</code><a anchor="load"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the map is initialized (when its center and zoom are set
+                            for the first time).</td>
+                    </tr>
+                    <tr id="zoomstart">
+                        <td><code><b>zoomstart</b>
+    		</code><a anchor="zoomstart"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the map zoom is about to change (e.g. before zoom animation).</td>
+                    </tr>
+                    <tr id="movestart">
+                        <td><code><b>movestart</b>
+    		</code><a anchor="movestart"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the view of the map starts changing (e.g. user starts dragging the map).</td>
+                    </tr>
+                    <tr id="zoom">
+                        <td><code><b>zoom</b>
+    		</code><a anchor="zoom"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired repeatedly during any change in zoom level, including zoom
+                            and fly animations.</td>
+                    </tr>
+                    <tr id="move">
+                        <td><code><b>move</b>
+    		</code><a anchor="move"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired repeatedly during any movement of the map, including pan and
+                            fly animations.</td>
+                    </tr>
+                    <tr id="zoomend">
+                        <td><code><b>zoomend</b>
+    		</code><a anchor="zoomend"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the map has changed, after any animations.</td>
+                    </tr>
+                    <tr id="moveend">
+                        <td><code><b>moveend</b>
+    		</code><a anchor="moveend"></a></td>
+                        <td><code><a href="#event">Event</a></code></td>
+                        <td>Fired when the center of the map stops changing (e.g. user stopped
+                            dragging the map).</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="bbox"></div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
